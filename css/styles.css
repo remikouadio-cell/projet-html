@@ -1,0 +1,394 @@
+/* Variables de Couleurs pour une ambiance vibrante d'Abidjan */
+:root {
+    --primary-color: #A0522D; /* Terre d'Afrique (brun clair) */
+    --secondary-color: #FFD700; /* Or (vibrant et chic) */
+    --accent-color: #2E8B57; /* Vert Forêt (nature et beauté) */
+    --text-color: #333;
+    --light-bg: #F5F5F5;
+    --dark-bg: #222;
+}
+
+/* BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: white;
+}
+
+/* HEADER & NAVIGATION (Flexbox) */
+header {
+    background: var(--dark-bg);
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.whatsapp-btn-mobile {
+    display: none; /* Caché sur desktop */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+/* BOUTONS */
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #8B4513; 
+    transform: translateY(-2px);
+}
+
+.whatsapp-btn-desktop {
+    background-color: #25D366; 
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.whatsapp-btn-desktop:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+}
+.whatsapp-btn-desktop i {
+    margin-right: 10px;
+}
+
+/* MAIN  */
+main {
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+h1, h2 {
+    color:#000;
+    margin-bottom: 20px;
+}
+
+/* 1. HERO SECTION */
+.hero {
+    background: url('../images/bg\ \(2\).jpg') center/cover no-repeat; /* Image de fond pour le style d'Abidjan */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 5em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+/* 2. SERVICES PHARES (Flexbox) */
+.services-phares {
+    background-color: var(--light-bg);
+}
+
+.cards-flex {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Important pour le responsive */
+}
+
+.service-card {
+    background: #fff;;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%; /* Largeur fixe sur desktop */
+    min-width: 250px;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* 3. APPEL À L'ACTION */
+.appel-action {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 40px 5%;
+}
+
+.appel-action h2 {
+    color: var(--secondary-color);
+}
+
+/* SERVICES PAGE (CSS Grid) */
+.services-page {
+    padding: 40px 5%;
+}
+
+.intro-services {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive Grid */
+    gap: 30px;
+}
+
+.service-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-left: 5px solid var(--accent-color);
+    padding: 25px;
+    border-radius: 5px;
+    text-align: left;
+    transition: all 0.3s;
+}
+
+.service-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.service-item .prix {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-top: 15px;
+}
+
+.service-item.highlight {
+    background-color: ( --light-bg);
+    border-left: 5px solid var(--primary-color);
+}
+
+/* CONTACT PAGE  (Flexbox/Grid) */
+.contact-page {
+    padding: 40px 5%;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-info, .contact-form-container {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+/* Form Style */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Localisation */
+.localisation {
+    margin-top: 40px;
+}
+
+.localisation h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+/* Pour les écrans de taille moyenne (Tablettes) */
+@media (max-width: 900px) {
+    .cards-flex {
+        justify-content: center;
+    }
+    .service-card {
+         /* Deux cartes par ligne */
+        width: 45%;
+    }
+}
+
+/* Pour les petits écrans (Mobiles) */
+@media (max-width: 600px) {
+    /* Header & Navigation */
+    header {
+        padding: 10px 5%;
+    }
+    .logo {
+        font-size: 1.5em;
+    }
+    nav {
+        /* Cache la navigation principale sur mobile */
+        display: none; 
+    }
+    .whatsapp-btn-mobile {
+        /* Affiche le bouton WhatsApp dans le header sur mobile */
+        display: block;
+        
+    }
+
+    /* Hero Section */
+
+    .hero {
+        padding: 80px 5%;
+    }
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    /* Services Phares */
+    .service-card {
+        /* Une carte par ligne */
+        width: 90%; 
+    }
+
+    /* Services Grid */
+    .services-grid {
+        /* Une seule colonne sur mobile */
+
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Contact Page */
+    
+    .contact {
+        flex-direction: column;
+    }
+    .whatsapp-btn-desktop {
+        /* Le bouton prend toute la largeur */
+
+        width: 100%; 
+    }
+}
+
